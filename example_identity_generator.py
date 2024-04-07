@@ -1,5 +1,5 @@
 import random
-import json
+import pprint
 
 name = input("Jak masz na imię: ")
 surname = input("Jak masz na nazwisko: ")
@@ -81,10 +81,10 @@ surnames = list(filter(lambda x: x != unknown_identity['surname'], surnames))
 female_names = list(filter(lambda x: x != unknown_identity['name'], female_names))
 birthdays = list(filter(lambda x: x != unknown_identity['birthday'], birthdays))
 
-print("###### Tożsamość Celebryty ######" )
-print(json.dumps(celebrity_identity, indent=1))
-print("###### Tożsamość Nieznanej Osoby ######" )
-print(json.dumps(unknown_identity, indent=1))
+print("\n###### Tożsamość Celebryty ######" )
+pprint.pprint(celebrity_identity)
+print("\n###### Tożsamość Nieznanej Osoby ######" )
+pprint.pprint(unknown_identity, indent=1)
 
 def create_fake_indetity() -> dict:
     fake_identity = {
@@ -100,5 +100,5 @@ def create_fake_indetity() -> dict:
 
 # print(male_names, female_names, hometowns, surnames)
 fake_identity = create_fake_indetity()
-print("###### Fałszywa tożsamość ######" )
-print(json.dumps(fake_identity, indent=1))
+print("\n###### Fałszywa tożsamość ######" )
+pprint.pprint(fake_identity)
