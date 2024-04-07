@@ -7,7 +7,7 @@ gender = input("Podaj swoją płeć: ")
 hometown = input("Napisz jak nazywa się twoje miasto rodzinne: ")
 birthday = input("Podaj swój dzień urodzenia (np. 1 kwietnia): ")
 mothers_name = input("Podaj imię swojej matki: ")
-fathers_name = input("Podaj imię swojego ojca: ")
+fathers_name = input("Podaj imię swojego ojca: \n\n\n")
 
 
 male_names = list(filter(lambda x: (x != name and x != fathers_name), open("imiona_męskie.txt", "r").read().strip().split("\n")))
@@ -81,8 +81,10 @@ surnames = list(filter(lambda x: x != unknown_identity['surname'], surnames))
 female_names = list(filter(lambda x: x != unknown_identity['name'], female_names))
 birthdays = list(filter(lambda x: x != unknown_identity['birthday'], birthdays))
 
-print(celebrity_identity, unknown_identity, sep="\n\n")
-
+print("###### Tożsamość Celebryty ######" )
+print(json.dumps(celebrity_identity, indent=1))
+print("###### Tożsamość Nieznanej Osoby ######" )
+print(json.dumps(unknown_identity, indent=1))
 
 def create_fake_indetity() -> dict:
     fake_identity = {
@@ -96,6 +98,7 @@ def create_fake_indetity() -> dict:
     return fake_identity
 
 
-print(male_names, female_names, hometowns, surnames)
+# print(male_names, female_names, hometowns, surnames)
 fake_identity = create_fake_indetity()
-print(fake_identity)
+print("###### Fałszywa tożsamość ######" )
+print(json.dumps(fake_identity, indent=1))
