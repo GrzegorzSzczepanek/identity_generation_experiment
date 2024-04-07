@@ -7,7 +7,7 @@ gender = input("Podaj swoją płeć: ")
 hometown = input("Napisz jak nazywa się twoje miasto rodzinne: ")
 birthday = input("Podaj swój dzień urodzenia (np. 1 kwietnia): ")
 mothers_name = input("Podaj imię swojej matki: ")
-fathers_name = input("Podaj imię swojego ojca: \n\n\n")
+fathers_name = input("Podaj imię swojego ojca: ")
 
 
 male_names = list(filter(lambda x: (x != name and x != fathers_name), open("imiona_męskie.txt", "r").read().strip().split("\n")))
