@@ -66,19 +66,19 @@ celebrity_identity = create_celebrity_identity(name,
                                                mothers_name,
                                                fathers_name)
 
-male_names = list(filter(lambda x: x != celebrity_identity['name'], male_names))
+male_names = list(filter(lambda x: x != celebrity_identity['name'] and x != celebrity_identity['fathers_name'] , male_names))
 hometowns = list(filter(lambda x: x != celebrity_identity['hometown'], hometowns))
 surnames = list(filter(lambda x: x != celebrity_identity['surname'], surnames))
-female_names = list(filter(lambda x: x != celebrity_identity['name'], female_names))
+female_names = list(filter(lambda x: x != celebrity_identity['name'] and x != celebrity_identity['mothers_name'], female_names))
 birthdays = list(filter(lambda x: x != celebrity_identity['birthday'], birthdays))
 
 
 unknown_identity = create_unknown_person_indentity()
 
-male_names = list(filter(lambda x: x != unknown_identity['name'], male_names))
+male_names = list(filter(lambda x: x != unknown_identity['name'] and x != unknown_identity['fathers_name'], male_names))
 hometowns = list(filter(lambda x: x != unknown_identity['hometown'], hometowns))
 surnames = list(filter(lambda x: x != unknown_identity['surname'], surnames))
-female_names = list(filter(lambda x: x != unknown_identity['name'], female_names))
+female_names = list(filter(lambda x: x != unknown_identity['name'] and x != unknown_identity['mothers_name'], female_names))
 birthdays = list(filter(lambda x: x != unknown_identity['birthday'], birthdays))
 
 print("\n###### Tożsamość Celebryty ######" )
